@@ -21,16 +21,6 @@ test('user can add a todo', () => {
   expect(todo).toBeInTheDocument();
 })
 
-test('user can check a todo', () => {
-  render(<ToDoList />);
-  const textBox = screen.getByRole("textbox");
-  userEvent.type(textBox, "A test todo!")
-  userEvent.click(screen.getByText('Submit'))
-  const checkbox = screen.getByRole("checkbox");
-  userEvent.click(checkbox)
-  expect(checkbox).toBeInTheDocument();
-})
-
 test('user can reset the list and remove the current todos', () => {
   render(<ToDoList />);
   const textBox = screen.getByRole("textbox");
