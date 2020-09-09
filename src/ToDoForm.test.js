@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import ToDoForm from './ToDoForm';
+jest.mock('./ToDoList')
 
 test('renders a to do form', () => {
   render(<ToDoForm />);
