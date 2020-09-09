@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ToDo from './ToDo'
 
 class ToDoList extends Component{
   constructor(props) {
@@ -36,12 +37,9 @@ class ToDoList extends Component{
           </label>
           <input type="submit" value="Submit" />
         </form>
-        {this.state.todos.map( (todo, index) => {
+        {this.state.todos.map((todo, index) => {
           return (
-            <div key={index} className="todo-single">
-              <p>{todo}</p>
-              <input type="checkbox" />
-            </div>
+            <ToDo text={todo} key={index} />
           )
         })}
       </div>
