@@ -5,29 +5,19 @@ import userEvent from '@testing-library/user-event'
 import ToDoList from './ToDoList';
 
 test('renders a to do list', () => {
-  render(<ToDoList />);
-  const element = screen.getByText(/Yet Another To Do List/);
-  const textBox = screen.getByRole("textbox");
+  render(<ToDoList todos={["one"]}/>);
+  const element = screen.getByText("one");
+  const checkbox = screen.getByRole("checkbox");
+
   expect(element).toBeInTheDocument();
-  expect(textBox).toBeInTheDocument();
+  expect(checkbox).toBeInTheDocument();
 });
 
-test('user can add a todo', () => {
-  render(<ToDoList />);
-  const textBox = screen.getByRole("textbox");
-  userEvent.type(textBox, "A test todo!")
-  userEvent.click(screen.getByText('Submit'))
-  const todo = screen.getByText("A test todo!");
-  expect(todo).toBeInTheDocument();
-})
+test('user can see multiple todos', () => {
+  render(<ToDoList todos={["one", "two"]}/>);
+  const todo = screen.getByText("one");
+  const todo2 = screen.getByText("two");
 
-test('user can reset the list and remove the current todos', () => {
-  render(<ToDoList />);
-  const textBox = screen.getByRole("textbox");
-  userEvent.type(textBox, "A test todo!")
-  userEvent.click(screen.getByText('Submit'))
-  const resetLink = screen.getByText("reset");
-  userEvent.click(resetLink)
-  const todo = screen.queryByText("A test todo!");
-  expect(todo).not.toBeInTheDocument()
+  expect(todo).toBeInTheDocument();
+  expect(todo2).toBeInTheDocument();
 })
