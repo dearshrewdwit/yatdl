@@ -1,12 +1,12 @@
 ## Quick Start
 
-1. git clone this directory
-2. cd into the directory
-3. yarn install
-4. yarn start
+1. `git clone` this directory
+2. `cd `into the directory
+3. `yarn install`
+4. `yarn start`
 
 ### Instructions
-Have a look at the branches to see the development progression
+Have a look at the [branches](https://github.com/dearshrewdwit/yatdl-exemplar/branches) to see the development progression
 
 ### Development
 
@@ -20,3 +20,7 @@ You will also see any lint errors in the console.
 
 `yarn test` launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### Deployment
+
+Deployed to heroku: [blooming-caverns-16527](https://blooming-caverns-16527.herokuapp.com/) following [heroku docs](https://blog.heroku.com/deploying-react-with-zero-configuration)
