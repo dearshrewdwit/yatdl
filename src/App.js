@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import ToDoForm from './ToDoForm'
-import ToDoHeader from './ToDoHeader'
+import ToDoForm from './components/ToDo/ToDoForm'
+import ToDoHeader from './components/ToDo/ToDoHeader'
 
 function App() {
   return (

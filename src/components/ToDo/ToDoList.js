@@ -1,7 +1,7 @@
 import React from 'react';
 import ToDo from './ToDo'
 
-function ToDoList(props) {
+const ToDoList = (props) => {
   return (
     <div className="todo-list">
       {props.todos.map((todo, index) => {
